@@ -104,7 +104,7 @@ namespace WindowsFormsApplication1
                 }
                 comboBoxCell.Items.AddRange(permissions.ToArray());
 
-                row.Cells[2].Value = comboBoxCell;
+                row.Cells.Add(comboBoxCell);
 
             }
            

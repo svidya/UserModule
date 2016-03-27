@@ -15,3 +15,4 @@ F:\Practice\Windows\UserModule\UserModule.Data\bin\Debug\UserModule.Data.dll
 F:\Practice\Windows\UserModule\UserModule.Data\bin\Debug\UserModule.Data.pdb
 F:\Practice\Windows\UserModule\UserModule.Data\obj\Debug\UserModule.Data.dll
 F:\Practice\Windows\UserModule\UserModule.Data\obj\Debug\UserModule.Data.pdb
+F:\Practice\Windows\UserModule\UserModule.Data\obj\Debug\UserModule.Data.csprojResolveAssemblyReference.cache

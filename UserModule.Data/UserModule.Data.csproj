@@ -46,6 +46,7 @@
     <Compile Include="DataAccess\IUserProfileAccess.cs" />
     <Compile Include="DataAccess\UserProfileAccess.cs" />
     <Compile Include="DataModel\BranchEntity.cs" />
+    <Compile Include="DataModel\LocalSystemBranchEntity.cs" />
     <Compile Include="DataModel\LocalSystemEntity.cs" />
     <Compile Include="DataModel\UserAccessEntity.cs" />
     <Compile Include="DataModel\UserLevelCategoryEntity.cs" />
