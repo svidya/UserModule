@@ -25,3 +25,5 @@ F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\UserModule.App.exe
 F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\UserModule.App.pdb
 F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.Data.dll
 F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.Data.pdb
+F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.interfaces.dll
+F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.interfaces.pdb

@@ -77,7 +77,7 @@ namespace UserModule.Data
                 sqlCommand.Parameters.AddWithValue("@isAdmin", userProfile.IsAdmin? "Y" : "N" );
                 sqlCommand.Parameters.AddWithValue("@dateTime", DateTime.Now);
                 sqlCommand.Parameters.AddWithValue("@password", Script.defaultPassword);
-                sqlCommand.Parameters.AddWithValue("@operatorId", userProfile.Operator.UserProfileId);
+                sqlCommand.Parameters.AddWithValue("@operatorId", userProfile.OperatorId);
 
                 sqlCommand.Parameters.AddWithValue("@userProfileId", userProfile.UserProfileId);
 

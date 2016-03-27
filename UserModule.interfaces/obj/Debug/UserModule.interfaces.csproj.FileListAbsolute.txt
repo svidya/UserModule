@@ -1,0 +1,5 @@
+F:\Practice\Windows\UserModule\UserModule.interfaces\obj\Debug\UserModule.interfaces.csprojResolveAssemblyReference.cache
+F:\Practice\Windows\UserModule\UserModule.interfaces\bin\Debug\UserModule.interfaces.dll
+F:\Practice\Windows\UserModule\UserModule.interfaces\bin\Debug\UserModule.interfaces.pdb
+F:\Practice\Windows\UserModule\UserModule.interfaces\obj\Debug\UserModule.interfaces.dll
+F:\Practice\Windows\UserModule\UserModule.interfaces\obj\Debug\UserModule.interfaces.pdb

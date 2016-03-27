@@ -3,12 +3,33 @@ using System.Data;
 
 namespace UserModule.Data
 {
-    public class UserProfileService : IUserProfileService
+    public sealed class UserProfileService : IUserProfileService
     {
+
+        private static IUserProfileService _instance;
+        private static object _lockbject = new object();
+
+
+        public static IUserProfileService Instance
+        {
+            get {
+
+                lock(_lockbject)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new UserProfileService();
+                    }
+                }
+
+                return _instance;
+            }
+        }
+
 
         private IUserProfileAccess userProfileAccess;
 
-        public UserProfileService()
+        private UserProfileService()
         {
             this.userProfileAccess = new UserProfileAccess();
         }

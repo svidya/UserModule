@@ -3,6 +3,8 @@ using System.Collections;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserModule.Data;
 
@@ -34,12 +36,34 @@ namespace WindowsFormsApplication1
 
         private void UserAccessForm_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = LoadData();
-            dataGridView1.Columns[0].Visible = false;
-            
-            AddBranches();
-            AddPermissions();
-            
+
+            var tokenSource = new CancellationTokenSource();
+            CancellationToken token = tokenSource.Token;
+            TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext();
+
+            DataTable dtUserTbl = null;
+            Task t = Task.Factory.StartNew(() =>
+            {           
+                dtUserTbl = LoadData();
+                /* Do Something */
+            }, token).ContinueWith(ant =>
+            {
+                /* Do something on UI thread after task has completed and check exceptions */
+
+                tableLayoutPanel1.Visible = true;
+                //panel1.Visible = false;
+                dataGridView1.DataSource = dtUserTbl;
+                dataGridView1.Columns[0].Visible = false;
+
+
+                AddBranches();
+                AddPermissions();
+
+            }, CancellationToken.None,
+           TaskContinuationOptions.None,
+           scheduler);
+
+
 
         }
 
@@ -83,6 +107,7 @@ namespace WindowsFormsApplication1
 
         private DataTable LoadData()
         {
+            Thread.Sleep(10000);
             ConnectionString = ConfigurationManager.ConnectionStrings["UserProfile"].ToString();
             DataSet ds = new DataSet();
             using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter())
@@ -145,6 +170,11 @@ namespace WindowsFormsApplication1
         }
 
         private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

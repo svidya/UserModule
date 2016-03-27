@@ -1,55 +1,129 @@
 ﻿using System;
 using System.Windows.Forms;
+using UserModule.App.Presenter;
 using UserModule.Data;
+using UserModule.interfaces;
 
 namespace WindowsFormsApplication1
 {
-    public partial class UserProfileEntry : Form
+    public partial class UserProfileEntry : Form , IUserProfileEntryView
     {
-        private IUserProfileService userProfileService;
+        UserModulePresenter _presenter = new UserModulePresenter();     
 
         public static long userProfileId;
         public static string userProfileName;
 
-        long _operatorId;
-        public long OperatorId
+        
+        #region Properties
+        //public static long OperatorId
+        //{
+        //    get
+        //    {
+        //        return this._operatorId;
+        //    }
+        //    set
+        //    {
+        //        this._operatorId = Login.staticOperatorId;
+        //    }
+        //}
+
+       public string UserProfileId
         {
             get
             {
-                return this._operatorId;
+                return txtUserId.Text;
             }
+
             set
             {
-                this._operatorId = Login.operatorId;
+                txtUserId.Text = value;
             }
         }
+
+        public string UserProfileDomainName
+        {
+            get
+            {
+                return txtDomain.Text;
+            }
+
+            set
+            {
+                txtDomain.Text = value;
+            }
+        }
+
+        public string UserProfileName
+        {
+            get
+            {
+                return txtFullName.Text;
+            }
+
+            set
+            {
+                txtFullName.Text = value;
+            }
+        }
+
+        public string UserProfileAccount
+        {
+            get
+            {
+                return txtUserName.Text;
+            }
+
+            set
+            {
+                txtUserName.Text = value;
+            }
+        }
+
+        public bool isAdmin
+        {
+            get
+            {
+                return chkAdmin.Checked;
+            }
+
+            set
+            {
+                chkAdmin.Checked = value;
+            }
+        }
+
+        public string UserProfileMailAddress
+        {
+            get
+            {
+                return txtEmail.Text;
+            }
+
+            set
+            {
+                txtEmail.Text = value;
+            }
+        }
+        #endregion
+
         public UserProfileEntry()
         {
-            InitializeComponent();
-            userProfileService = new UserProfileService();
-           
+            InitializeComponent();   
         }
 
         private void UserProfileEntry_Load(object sender, EventArgs e)
         {
-           long userProfileId = userProfileService.RegisterUserProfile(" ");
+           long userProfileId = _presenter.RegisterUserProfile(" ");
            txtUserId.Text = userProfileId.ToString();
-           txtOperatorName.Text = Login.operatorName;  
+           string operatorName = _presenter.GetOperatorName(Login.staticOperatorId);
+           txtOperatorName.Text = operatorName;  
         }
 
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-            UserProfileEntity userProfile = new UserProfileEntity();
-            userProfile.UserProfileId = Convert.ToInt64(txtUserId.Text);
-            userProfile.UserProfileDomainName = txtDomain.Text;
-            userProfile.UserProfileName = txtFullName.Text;
-            userProfile.UserProfileAccount = txtUserName.Text;
-            userProfile.IsAdmin = chkAdmin.Checked;
-            userProfile.UserProfileMailAddress = txtEmail.Text;
-            userProfile.Operator = userProfileService.GetUserProfileById(OperatorId);
-
-            bool isUpdated = userProfileService.UpdateUserProfile(userProfile);
+        {   
+            bool isUpdated = _presenter.UpdateUserData(UserProfileId,UserProfileDomainName,UserProfileName,UserProfileAccount,
+                isAdmin,UserProfileMailAddress,Login.staticOperatorId);
             
         }
 

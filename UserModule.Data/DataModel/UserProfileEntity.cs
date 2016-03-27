@@ -1,8 +1,9 @@
 ﻿using System;
+using UserModule.interfaces;
 
 namespace UserModule.Data
 {
-    public class UserProfileEntity
+    public class UserProfileEntity: IUserProfileEntity
     {
         public long UserProfileId { get; set; }
         public int UserProfileStatus { get; set; }
@@ -13,9 +14,8 @@ namespace UserModule.Data
         public string UserProfileMailAddress { get; set; }
         public bool IsAdmin { get; set; }  
         public long OperatorId { get; set; }
-        public UserProfileEntity Operator { get; set; }
+        public IUserProfileEntity Operator { get; set; }
         public DateTime UserProfileTimeStamp { get; set; }
-         
 
     }
 }
