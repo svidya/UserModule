@@ -1,7 +1,6 @@
 ﻿using System.Data;
-using UserModule.DataModel;
 
-namespace UserModule.BusinessService
+namespace UserModule.Data
 {
     public interface IUserProfileService
     {

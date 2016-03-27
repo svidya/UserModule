@@ -1,4 +1,4 @@
-﻿namespace UserModule.Sql
+﻿namespace UserModule.Data
 {
     public static class Script
     {

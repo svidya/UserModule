@@ -15,8 +15,6 @@ F:\Practice\Windows\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\
 F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.App.exe.config
 F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.App.exe
 F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.App.pdb
-F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\DataModel.dll
-F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\DataModel.pdb
 F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\UserModule.App.csprojResolveAssemblyReference.cache
 F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\WindowsFormsApplication1.Login.resources
 F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\UserModule.App.Properties.Resources.resources
@@ -25,3 +23,5 @@ F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\WindowsFormsApplication1
 F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\UserModule.App.csproj.GenerateResource.Cache
 F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\UserModule.App.exe
 F:\Practice\Windows\UserModule\UserModule.App\obj\Debug\UserModule.App.pdb
+F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.Data.dll
+F:\Practice\Windows\UserModule\UserModule.App\bin\Debug\UserModule.Data.pdb

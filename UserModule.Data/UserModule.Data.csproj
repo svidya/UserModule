@@ -7,8 +7,8 @@
     <ProjectGuid>{E2660568-E810-44E2-9206-2F299D38C0FB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataModel</RootNamespace>
-    <AssemblyName>DataModel</AssemblyName>
+    <RootNamespace>UserModule.Data</RootNamespace>
+    <AssemblyName>UserModule.Data</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -47,6 +47,8 @@
     <Compile Include="DataAccess\UserProfileAccess.cs" />
     <Compile Include="DataModel\BranchEntity.cs" />
     <Compile Include="DataModel\LocalSystemEntity.cs" />
+    <Compile Include="DataModel\UserAccessEntity.cs" />
+    <Compile Include="DataModel\UserLevelCategoryEntity.cs" />
     <Compile Include="DataModel\UserProfileEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\Script.cs" />

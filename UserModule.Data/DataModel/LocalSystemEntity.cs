@@ -1,4 +1,4 @@
-﻿namespace UserModule.DataModel
+﻿namespace UserModule.Data
 {
     public class LocalSystemEntity
     {

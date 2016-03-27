@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace UserModule.DataAccess
+namespace UserModule.Data
 {
     public abstract class ConnectionAccess
     {

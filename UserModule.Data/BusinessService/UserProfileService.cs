@@ -1,9 +1,6 @@
-﻿using System;
-using System.Data;
-using UserModule.DataAccess;
-using UserModule.DataModel;
+﻿using System.Data;
 
-namespace UserModule.BusinessService
+namespace UserModule.Data
 {
     public class UserProfileService : IUserProfileService
     {

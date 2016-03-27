@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UserModule.DataModel
+namespace UserModule.Data
 {
     public class UserProfileEntity
     {

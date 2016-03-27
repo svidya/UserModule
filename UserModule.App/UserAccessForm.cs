@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using UserModule.Sql;
+using UserModule.Data;
 
 namespace WindowsFormsApplication1
 {
@@ -109,7 +104,7 @@ namespace WindowsFormsApplication1
                 }
                 comboBoxCell.Items.AddRange(permissions.ToArray());
 
-                row.Cells.Add(comboBoxCell);
+                row.Cells[2].Value = comboBoxCell;
 
             }
            

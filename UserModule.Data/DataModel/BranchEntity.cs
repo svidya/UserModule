@@ -1,4 +1,4 @@
-﻿namespace UserModule.Datamodel
+﻿namespace UserModule.Data
 {
     public class BranchEntity
     {

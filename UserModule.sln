@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserModule.App", "UserModule.App\UserModule.App.csproj", "{B00B2E04-4AD2-420F-89D5-7B22133C9D89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserModule.Data", "DataModel\UserModule.Data.csproj", "{E2660568-E810-44E2-9206-2F299D38C0FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserModule.Data", "UserModule.Data\UserModule.Data.csproj", "{E2660568-E810-44E2-9206-2F299D38C0FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

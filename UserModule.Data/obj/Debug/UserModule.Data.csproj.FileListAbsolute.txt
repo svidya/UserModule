@@ -10,3 +10,9 @@ F:\Practice\Windows\UserModule\DataModel\bin\Debug\DataModel.pdb
 F:\Practice\Windows\UserModule\DataModel\obj\Debug\UserModule.Data.csprojResolveAssemblyReference.cache
 F:\Practice\Windows\UserModule\DataModel\obj\Debug\DataModel.dll
 F:\Practice\Windows\UserModule\DataModel\obj\Debug\DataModel.pdb
+F:\Practice\Windows\UserModule\UserModule.Data\bin\Debug\UserModule.Data.dll.config
+F:\Practice\Windows\UserModule\UserModule.Data\bin\Debug\UserModule.Data.dll
+F:\Practice\Windows\UserModule\UserModule.Data\bin\Debug\UserModule.Data.pdb
+F:\Practice\Windows\UserModule\UserModule.Data\obj\Debug\UserModule.Data.csprojResolveAssemblyReference.cache
+F:\Practice\Windows\UserModule\UserModule.Data\obj\Debug\UserModule.Data.dll
+F:\Practice\Windows\UserModule\UserModule.Data\obj\Debug\UserModule.Data.pdb

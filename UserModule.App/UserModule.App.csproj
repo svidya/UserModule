@@ -96,7 +96,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataModel\UserModule.Data.csproj">
+    <ProjectReference Include="..\UserModule.Data\UserModule.Data.csproj">
       <Project>{e2660568-e810-44e2-9206-2f299d38c0fb}</Project>
       <Name>UserModule.Data</Name>
     </ProjectReference>

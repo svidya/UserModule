@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using UserModule.DataModel;
-using UserModule.Sql;
 
-namespace UserModule.DataAccess
+namespace UserModule.Data
 {
     public class UserProfileAccess :  ConnectionAccess,IUserProfileAccess
     {

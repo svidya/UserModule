@@ -1,7 +1,6 @@
 ﻿using System.Data;
-using UserModule.DataModel;
 
-namespace UserModule.DataAccess
+namespace UserModule.Data
 {
     public interface IUserProfileAccess
     {
