@@ -4,7 +4,7 @@ namespace UserModule.Data
 {
     public interface IUserProfileService
     {
-        DataRow GetUserProfileById(long userProfileId);
+        UserProfileEntity GetUserProfileById(long userProfileId);
 
         DataRow GetUserProfileByName(string userName);
 

@@ -35,8 +35,50 @@ namespace WindowsFormsApplication1
         private void UserAccessForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = LoadData();
+            dataGridView1.Columns[0].Visible = false;
+            
+            AddBranches();
             AddPermissions();
+            
 
+        }
+
+        private void AddBranches()
+        {      
+
+            DataTable branchCodes = LoadBranchCodes();
+
+            foreach(DataRow dr in branchCodes.Rows)
+            {
+                var checkBox = new DataGridViewCheckBoxColumn();
+                checkBox.ValueType = typeof(bool);
+                //checkBox.Name = "chk"+ dr["BranchCode"].ToString();
+                checkBox.HeaderText= dr["BranchCode"].ToString();
+                dataGridView1.Columns.Add(checkBox);
+            }
+        }
+
+        private DataTable LoadBranchCodes()
+        {
+            ConnectionString = ConfigurationManager.ConnectionStrings["UserProfile"].ToString();
+            DataTable ds = new DataTable();
+            using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter())
+            {
+                // Create the command and set its properties
+                sqlDataAdapter.SelectCommand = new SqlCommand();
+                sqlDataAdapter.SelectCommand.Connection = new SqlConnection(ConnectionString);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.Text;
+
+                // Assign the SQL to the command object
+                sqlDataAdapter.SelectCommand.CommandText = string.Format(Script.sqlGetBranchCodes);
+
+                // Add the input parameters to the parameter collection
+                // sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@localSystemId", systemId);
+
+                // Fill the table from adapter
+                sqlDataAdapter.Fill(ds);
+            }
+            return ds;
         }
 
         private DataTable LoadData()
@@ -53,11 +95,7 @@ namespace WindowsFormsApplication1
                 // Assign the SQL to the command object
                 sqlDataAdapter.SelectCommand.CommandText = string.Format(Script.sqlGetLocalSystem);
 
-                // Add the input parameters to the parameter collection
-               // sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Occupation", occupation == null ? DBNull.Value : occupation);
-                //sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@MaritalStatus", maritalStatus == null ? DBNull.Value : maritalStatus);
-
-                // Fill the table from adapter
+            
                 sqlDataAdapter.Fill(dt);
             }
 
@@ -73,45 +111,18 @@ namespace WindowsFormsApplication1
 
         public void AddPermissions()
         {
-            DataTable dPermissions = new DataTable();
-            long systemId = 0;
+            var comboBox = new DataGridViewComboBoxColumn();
+            comboBox.Name = "Permissions";    
+            DataTable permissions = LoadPermissions();
+            comboBox.DataSource = permissions;
 
+            comboBox.ValueMember = "UserLevelCategoryId";
+            comboBox.DisplayMember = "UserLevelCategoryName";
             
-            DataGridViewComboBoxCell comboBoxCell = null;
-
-            //foreach(DataRow dr in dt.Rows)
-            //{
-            //    //ArrayList permissions = new ArrayList();
-            //    //comboBoxCell = new DataGridViewComboBoxCell();
-            //    //systemId = Convert.ToInt64(dr["LocalSystemId"]);
-            //    //dPermissions = LoadPermissions(systemId);
-
-          
-
-
-            //}
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                ArrayList permissions = new ArrayList();
-                comboBoxCell = new DataGridViewComboBoxCell();
-                systemId = Convert.ToInt64(row.Cells[0].Value);
-                dPermissions = LoadPermissions(systemId);
-                //comboBoxCell.DataSource = dPermissions;
-                foreach (DataRow dataRow in dPermissions.Rows)
-                {
-                    permissions.Add(dataRow["UserLevelCategoryName"].ToString());
-                }
-                comboBoxCell.Items.AddRange(permissions.ToArray());
-
-                row.Cells.Add(comboBoxCell);
-
-            }
-           
-
+            dataGridView1.Columns.Add(comboBox);
         }
 
-        public DataTable LoadPermissions(long systemId)
+        public DataTable LoadPermissions()
         {
             ConnectionString = ConfigurationManager.ConnectionStrings["UserProfile"].ToString();
             DataTable ds = new DataTable();
@@ -125,14 +136,16 @@ namespace WindowsFormsApplication1
                 // Assign the SQL to the command object
                 sqlDataAdapter.SelectCommand.CommandText = string.Format(Script.sqlGetUserLevelCategory);
 
-                // Add the input parameters to the parameter collection
-                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@localSystemId", systemId);
-
                 // Fill the table from adapter
                 sqlDataAdapter.Fill(ds);
             }
 
             return ds;
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
 
         }
     }

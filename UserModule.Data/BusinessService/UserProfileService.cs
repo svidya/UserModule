@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace UserModule.Data
 {
@@ -21,12 +22,7 @@ namespace UserModule.Data
         {
             return userProfileAccess.GetAllUserProfiles();
         }
-
-        public DataRow GetUserProfileById(long userProfileId)
-        {
-            return userProfileAccess.GetUserProfileById(userProfileId);
-        }
-
+       
         public DataRow GetUserProfileByName(string userName)
         {
             return userProfileAccess.GetUserProfileByName(userName);
@@ -41,6 +37,26 @@ namespace UserModule.Data
         public bool UpdateUserProfile(UserProfileEntity userProfile)
         {
             return userProfileAccess.UpdateUserProfile(userProfile);
+        }
+
+        public UserProfileEntity GetUserProfileById(long userProfileId)
+        {
+            UserProfileEntity userProfile = new UserProfileEntity();
+            DataRow dataRow = userProfileAccess.GetUserProfileById(userProfileId);
+
+            userProfile.UserProfileId = Convert.ToInt64(dataRow["UserProfileId"]);
+            userProfile.UserProfileStatus = Convert.ToInt32(dataRow["UserProfileStatus"]);
+            userProfile.UserProfileAccount = dataRow["UserProfileAccount"].ToString();
+            userProfile.UserProfileDomainName = dataRow["UserProfileDomainName"].ToString();
+            userProfile.UserProfileName = dataRow["UserProfileName"].ToString();  
+            userProfile.UserProfileMailAddress = dataRow["UserProfileMailAddress"].ToString();
+            userProfile.IsAdmin = dataRow["UserProfileUserLevelToUserAdmin"].ToString().Equals("Y")? true :false;
+            userProfile.OperatorId = Convert.ToInt64(dataRow["UserProfileOperatorId"]); 
+            userProfile.Password = dataRow["UserProfilePassword"].ToString();
+            userProfile.UserProfileTimeStamp = Convert.ToDateTime(dataRow["UserProfileTimeStamp"]);
+
+            return userProfile;
+            
         }
     }
 }

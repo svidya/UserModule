@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
         private IUserProfileService userProfileService;
         public static long operatorId;
         public static string operatorName;
-        
+
         public Login()
         {
             InitializeComponent();
