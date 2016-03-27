@@ -1,0 +1,5 @@
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\bin\Debug\DataModel.dll
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\bin\Debug\DataModel.pdb
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\obj\Debug\DataModel.dll
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\obj\Debug\DataModel.pdb

@@ -1,0 +1,12 @@
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\obj\Debug\DataModel.dll
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\obj\Debug\DataModel.pdb
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\bin\Debug\DataModel.dll.config
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\bin\Debug\DataModel.dll
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\bin\Debug\DataModel.pdb
+F:\Practice\Windows\WindowsFormsApplication1\DataModel\obj\Debug\UserModule.Data.csprojResolveAssemblyReference.cache
+F:\Practice\Windows\UserModule\DataModel\bin\Debug\DataModel.dll.config
+F:\Practice\Windows\UserModule\DataModel\bin\Debug\DataModel.dll
+F:\Practice\Windows\UserModule\DataModel\bin\Debug\DataModel.pdb
+F:\Practice\Windows\UserModule\DataModel\obj\Debug\UserModule.Data.csprojResolveAssemblyReference.cache
+F:\Practice\Windows\UserModule\DataModel\obj\Debug\DataModel.dll
+F:\Practice\Windows\UserModule\DataModel\obj\Debug\DataModel.pdb
