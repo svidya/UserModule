@@ -7,6 +7,7 @@ namespace UserModule.Data
 {
     public class UserProfileAccess : ConnectionAccess, IUserProfileAccess
     {
+        #region Methods
         public DataTable GetBranchCodes()
         {
             try
@@ -160,6 +161,8 @@ namespace UserModule.Data
                 return Convert.ToInt64(localsystemId) > 0 ?  true : false;
             }
         }
+
+        #endregion
     }
 }
 

@@ -90,13 +90,13 @@ namespace UserModule.App
                 txtEmail.Text = value;
             }
         }
-        #endregion
 
         public UserProfileEntry()
         {
             InitializeComponent();
             _presenter = new UserModulePresenter();
         }
+        #endregion    
 
         #region Events
         private void UserProfileEntry_Load(object sender, EventArgs e)
@@ -178,8 +178,7 @@ namespace UserModule.App
         {
             EnableTextBoxControls(true);
         }
-        #endregion
-
+        #endregion  
 
         #region Methods
         private void EnableTextBoxControls(bool enabled)

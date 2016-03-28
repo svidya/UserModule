@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
@@ -53,6 +52,7 @@ namespace UserModule.App
         {
             txtUserName.Text = UserName;
 
+            //Async Delegate 
             var tokenSource = new CancellationTokenSource();
             CancellationToken token = tokenSource.Token;
             TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext();
