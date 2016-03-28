@@ -1,28 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using UserModule.App.Presenter;
-using UserModule.Data;
+using UserModule.interfaces;
 
-
-
-namespace WindowsFormsApplication1
+namespace UserModule.App
 {
     public partial class Login : Form
     {
-        LoginModulePresenter _presenter = new LoginModulePresenter();
+        private ILoginModulePresenter _loginPresenter;
+      
         public static long staticOperatorId;
        
 
         public Login()
         {
             InitializeComponent();
-            
+            _loginPresenter = new LoginModulePresenter();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -32,7 +25,7 @@ namespace WindowsFormsApplication1
 
             try
             {
-                long operatorId = _presenter.Login(username, password);
+                long operatorId = _loginPresenter.Login(username, password);
                 staticOperatorId = operatorId;
                 if (operatorId > 0)
                 {

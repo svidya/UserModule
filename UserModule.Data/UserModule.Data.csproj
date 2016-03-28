@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessService\IUserAccessService.cs" />
     <Compile Include="BusinessService\IUserProfileService.cs" />
+    <Compile Include="BusinessService\UserAccessService.cs" />
     <Compile Include="BusinessService\UserProfileService.cs" />
     <Compile Include="DataAccess\ConnectionAccess.cs" />
+    <Compile Include="DataAccess\IUserModuleAccess.cs" />
     <Compile Include="DataAccess\IUserProfileAccess.cs" />
+    <Compile Include="DataAccess\UserModuleAccess.cs" />
     <Compile Include="DataAccess\UserProfileAccess.cs" />
     <Compile Include="DataModel\BranchEntity.cs" />
     <Compile Include="DataModel\LocalSystemBranchEntity.cs" />

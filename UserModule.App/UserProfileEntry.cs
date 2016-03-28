@@ -1,32 +1,19 @@
 ﻿using System;
 using System.Windows.Forms;
-using UserModule.App.Presenter;
-using UserModule.Data;
+using UserModule.App;
 using UserModule.interfaces;
 
-namespace WindowsFormsApplication1
+namespace UserModule.App
 {
     public partial class UserProfileEntry : Form, IUserProfileEntryView
-    {
-        UserModulePresenter _presenter = new UserModulePresenter();
+    {   
+
+        #region Properties  and Variables
+
+        private IUserModulePresenter _presenter;  
 
         public static long staticuserProfileId;
         public static string staticuserProfileName;
-
-
-        #region Properties
-        //public static long OperatorId
-        //{
-        //    get
-        //    {
-        //        return this._operatorId;
-        //    }
-        //    set
-        //    {
-        //        this._operatorId = Login.staticOperatorId;
-        //    }
-        //}
-
         public string UserProfileId
         {
             get
@@ -109,6 +96,7 @@ namespace WindowsFormsApplication1
         public UserProfileEntry()
         {
             InitializeComponent();
+            _presenter = new UserModulePresenter();
         }
 
         #region Events
@@ -118,7 +106,7 @@ namespace WindowsFormsApplication1
             txtUserId.Text = userProfileId.ToString();
             string operatorName = _presenter.GetOperatorName(Login.staticOperatorId);
             txtOperatorName.Text = operatorName;
-            btnEdit.Visible = false;
+            btnEdit.Enabled = false;
             btnGrantAccess.Enabled = false;
         }
 
@@ -133,7 +121,7 @@ namespace WindowsFormsApplication1
                 {
                     MessageBox.Show("User profile created successfully.Please Grant Access.");
                     EnableTextBoxControls(false);
-                    btnEdit.Visible = true;
+                    btnEdit.Enabled = true;
                     btnGrantAccess.Enabled = true;
                     staticuserProfileId = Convert.ToInt64(UserProfileId);
                     staticuserProfileName = UserProfileName;

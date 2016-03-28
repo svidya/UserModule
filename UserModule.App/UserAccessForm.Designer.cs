@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace UserModule.App
 {
     partial class UserAccessForm
     {
@@ -32,6 +32,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUserProfileId = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblUserAccessForm = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -79,6 +81,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblUserProfileId);
+            this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.lblUserAccessForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -86,11 +90,29 @@
             this.panel1.Size = new System.Drawing.Size(871, 93);
             this.panel1.TabIndex = 19;
             // 
+            // lblUserProfileId
+            // 
+            this.lblUserProfileId.AutoSize = true;
+            this.lblUserProfileId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserProfileId.Location = new System.Drawing.Point(599, 34);
+            this.lblUserProfileId.Name = "lblUserProfileId";
+            this.lblUserProfileId.Size = new System.Drawing.Size(82, 29);
+            this.lblUserProfileId.TabIndex = 4;
+            this.lblUserProfileId.Text = "User : ";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Enabled = false;
+            this.txtUserName.Location = new System.Drawing.Point(687, 40);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(100, 22);
+            this.txtUserName.TabIndex = 2;
+            // 
             // lblUserAccessForm
             // 
             this.lblUserAccessForm.AutoSize = true;
             this.lblUserAccessForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserAccessForm.Location = new System.Drawing.Point(49, 33);
+            this.lblUserAccessForm.Location = new System.Drawing.Point(51, 27);
             this.lblUserAccessForm.Name = "lblUserAccessForm";
             this.lblUserAccessForm.Size = new System.Drawing.Size(261, 36);
             this.lblUserAccessForm.TabIndex = 1;
@@ -195,5 +217,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label lblUserProfileId;
     }
 }

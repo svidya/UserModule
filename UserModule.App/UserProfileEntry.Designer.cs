@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace UserModule.App
 {
     partial class UserProfileEntry
     {

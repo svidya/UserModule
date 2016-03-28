@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILoginModulePresenter.cs" />
+    <Compile Include="IUserAccessPresenter.cs" />
     <Compile Include="IUserProfileEntryView.cs" />
     <Compile Include="IUserProfileEntity.cs" />
     <Compile Include="IUserModulePresenter.cs" />

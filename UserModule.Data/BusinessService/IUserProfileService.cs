@@ -15,5 +15,7 @@ namespace UserModule.Data
         bool UpdateUserProfile(UserProfileEntity userProfile);
 
         bool DeleteUserProfile(long userProfileId);
+
+       
     }
 }

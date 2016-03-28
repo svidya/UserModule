@@ -1,24 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
 using UserModule.Data;
 using UserModule.interfaces;
 
-namespace UserModule.App.Presenter
+namespace UserModule.App
 {
-    class UserModulePresenter : IUserModulePresenter
+    public class UserModulePresenter : IUserModulePresenter
     {
+        
         private IUserProfileService userProfileService = UserProfileService.Instance;
 
-        public DataTable GetUserAccessData()
-        {
-            throw new NotImplementedException();
-        }
-
-     
-
+        #region Methods
         public long RegisterUserProfile(string userName)
         {
             long userProfileId = userProfileService.RegisterUserProfile(userName);
@@ -71,5 +62,6 @@ namespace UserModule.App.Presenter
 
             return isDeleted;
         }
+        #endregion
     }
 }

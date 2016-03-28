@@ -52,6 +52,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenter\LoginModulePresenter.cs" />
+    <Compile Include="Presenter\UserAccessPresenter.cs" />
     <Compile Include="Presenter\UserModulePresenter.cs" />
     <Compile Include="UserAccessForm.cs">
       <SubType>Form</SubType>

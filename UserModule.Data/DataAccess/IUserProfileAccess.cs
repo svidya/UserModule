@@ -4,17 +4,11 @@ namespace UserModule.Data
 {
     public interface IUserProfileAccess
     {
-        DataRow GetUserProfileById(long userProfileId);
+        DataTable GetLocalSystem();
 
-        DataTable GetAllUserProfiles();
+        DataTable GetBranchCodes();
 
-        long AddUserProfile(string userName);
-
-        bool UpdateUserProfile(UserProfileEntity userProfile);
-
-        bool DeleteUserProfile(long userProfileId);
-
-        DataRow GetUserProfileByName(string userName);
+        DataTable GetUserLevels();
 
     }
 }

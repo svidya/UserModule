@@ -5,6 +5,7 @@ namespace UserModule.Data
 {
     public sealed class UserProfileService : IUserProfileService
     {
+        #region Singleton Pattern
 
         private static IUserProfileService _instance;
         private static object _lockbject = new object();
@@ -28,42 +29,47 @@ namespace UserModule.Data
 
 
         private IUserProfileAccess userProfileAccess;
+        private IUserModuleAccess userModuleAccess;
 
         private UserProfileService()
         {
             this.userProfileAccess = new UserProfileAccess();
-        }
+            this.userModuleAccess = new UserModuleAccess();
 
+        }
+        #endregion
+
+        #region Methods
         public bool DeleteUserProfile(long userProfileId)
         {
-            return userProfileAccess.DeleteUserProfile(userProfileId);
+            return userModuleAccess.DeleteUserProfile(userProfileId);
         }
 
         public DataTable GetAllUserProfiles()
         {
-            return userProfileAccess.GetAllUserProfiles();
+            return userModuleAccess.GetAllUserProfiles();
         }
        
         public DataRow GetUserProfileByName(string userName)
         {
-            return userProfileAccess.GetUserProfileByName(userName);
+            return userModuleAccess.GetUserProfileByName(userName);
         }
 
         public long RegisterUserProfile(string userName)
         {
-            return userProfileAccess.AddUserProfile(userName);    
+            return userModuleAccess.AddUserProfile(userName);    
         }
   
 
         public bool UpdateUserProfile(UserProfileEntity userProfile)
         {
-            return userProfileAccess.UpdateUserProfile(userProfile);
+            return userModuleAccess.UpdateUserProfile(userProfile);
         }
 
         public UserProfileEntity GetUserProfileById(long userProfileId)
         {
             UserProfileEntity userProfile = new UserProfileEntity();
-            DataRow dataRow = userProfileAccess.GetUserProfileById(userProfileId);
+            DataRow dataRow = userModuleAccess.GetUserProfileById(userProfileId);
 
             userProfile.UserProfileId = Convert.ToInt64(dataRow["UserProfileId"]);
             userProfile.UserProfileStatus = Convert.ToInt32(dataRow["UserProfileStatus"]);
@@ -78,6 +84,7 @@ namespace UserModule.Data
 
             return userProfile;
             
-        }
+        }  
+        #endregion
     }
 }
