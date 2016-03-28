@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccessForm));
             this.btnClose = new System.Windows.Forms.Button();
             this.userAccessGrid = new System.Windows.Forms.DataGridView();
-            this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUserProfileId = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -50,10 +49,11 @@
             // 
             // btnClose
             // 
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(581, 3);
+            this.btnClose.Location = new System.Drawing.Point(441, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(283, 39);
+            this.btnClose.Size = new System.Drawing.Size(433, 39);
             this.btnClose.TabIndex = 16;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -68,17 +68,6 @@
             this.userAccessGrid.RowTemplate.Height = 24;
             this.userAccessGrid.Size = new System.Drawing.Size(871, 441);
             this.userAccessGrid.TabIndex = 17;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(3, 3);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(283, 39);
-            this.btnBack.TabIndex = 18;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panel1
             // 
@@ -121,10 +110,11 @@
             // 
             // btnSave
             // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(292, 3);
+            this.btnSave.Location = new System.Drawing.Point(3, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(283, 39);
+            this.btnSave.Size = new System.Drawing.Size(432, 39);
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -171,14 +161,11 @@
             // 
             // tblLayoutButtonPanel
             // 
-            this.tblLayoutButtonPanel.ColumnCount = 3;
-            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tblLayoutButtonPanel.Controls.Add(this.btnBack, 0, 0);
-            this.tblLayoutButtonPanel.Controls.Add(this.btnClose, 2, 0);
-            this.tblLayoutButtonPanel.Controls.Add(this.btnSave, 1, 0);
-            this.tblLayoutButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tblLayoutButtonPanel.ColumnCount = 2;
+            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLayoutButtonPanel.Controls.Add(this.btnSave, 0, 0);
+            this.tblLayoutButtonPanel.Controls.Add(this.btnClose, 1, 0);
             this.tblLayoutButtonPanel.Location = new System.Drawing.Point(0, 507);
             this.tblLayoutButtonPanel.Name = "tblLayoutButtonPanel";
             this.tblLayoutButtonPanel.RowCount = 1;
@@ -213,7 +200,6 @@
         #endregion
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView userAccessGrid;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblUserAccessForm;
         private System.Windows.Forms.Button btnSave;
