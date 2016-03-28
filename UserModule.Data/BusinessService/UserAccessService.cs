@@ -3,7 +3,7 @@ using System.Data;
 
 namespace UserModule.Data
 {
-    public class UserAccessService : IUserAccessService
+    public sealed class UserAccessService : IUserAccessService
     {
         #region Singleton Pattern
         private static IUserAccessService _instance;

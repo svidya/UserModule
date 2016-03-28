@@ -74,7 +74,7 @@
             this.panel1.Controls.Add(this.lblUserProfileId);
             this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.lblUserAccessForm);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(871, 93);
@@ -102,7 +102,7 @@
             // 
             this.lblUserAccessForm.AutoSize = true;
             this.lblUserAccessForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserAccessForm.Location = new System.Drawing.Point(51, 27);
+            this.lblUserAccessForm.Location = new System.Drawing.Point(45, 28);
             this.lblUserAccessForm.Name = "lblUserAccessForm";
             this.lblUserAccessForm.Size = new System.Drawing.Size(261, 36);
             this.lblUserAccessForm.TabIndex = 1;
