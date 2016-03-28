@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccessForm));
             this.btnClose = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.userAccessGrid = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUserProfileId = new System.Windows.Forms.Label();
@@ -38,14 +38,14 @@
             this.lblUserAccessForm = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tblLayoutGridPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.lblLoading = new System.Windows.Forms.Label();
+            this.tblLayoutButtonPanel = new System.Windows.Forms.TableLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.userAccessGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tblLayoutGridPanel.SuspendLayout();
+            this.tblLayoutButtonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -59,15 +59,15 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dataGridView1
+            // userAccessGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(871, 441);
-            this.dataGridView1.TabIndex = 17;
+            this.userAccessGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userAccessGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userAccessGrid.Location = new System.Drawing.Point(3, 102);
+            this.userAccessGrid.Name = "userAccessGrid";
+            this.userAccessGrid.RowTemplate.Height = 24;
+            this.userAccessGrid.Size = new System.Drawing.Size(871, 441);
+            this.userAccessGrid.TabIndex = 17;
             // 
             // btnBack
             // 
@@ -132,58 +132,60 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tblLayoutGridPanel);
+            this.panel2.Controls.Add(this.lblLoading);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(877, 607);
             this.panel2.TabIndex = 21;
             // 
-            // tableLayoutPanel1
+            // tblLayoutGridPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.30972F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.64085F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(877, 607);
-            this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Visible = false;
+            this.tblLayoutGridPanel.ColumnCount = 1;
+            this.tblLayoutGridPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLayoutGridPanel.Controls.Add(this.panel1, 0, 0);
+            this.tblLayoutGridPanel.Controls.Add(this.userAccessGrid, 0, 1);
+            this.tblLayoutGridPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblLayoutGridPanel.Location = new System.Drawing.Point(0, 0);
+            this.tblLayoutGridPanel.Name = "tblLayoutGridPanel";
+            this.tblLayoutGridPanel.RowCount = 3;
+            this.tblLayoutGridPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.30972F));
+            this.tblLayoutGridPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.64085F));
+            this.tblLayoutGridPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblLayoutGridPanel.Size = new System.Drawing.Size(877, 607);
+            this.tblLayoutGridPanel.TabIndex = 1;
+            this.tblLayoutGridPanel.Visible = false;
             // 
-            // label1
+            // lblLoading
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(650, 135);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Loading ....";
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLoading.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.Location = new System.Drawing.Point(0, 0);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(650, 135);
+            this.lblLoading.TabIndex = 0;
+            this.lblLoading.Text = "Loading ....";
+            this.lblLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel2
+            // tblLayoutButtonPanel
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutPanel2.Controls.Add(this.btnBack, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnClose, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 507);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(877, 100);
-            this.tableLayoutPanel2.TabIndex = 22;
+            this.tblLayoutButtonPanel.ColumnCount = 3;
+            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tblLayoutButtonPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tblLayoutButtonPanel.Controls.Add(this.btnBack, 0, 0);
+            this.tblLayoutButtonPanel.Controls.Add(this.btnClose, 2, 0);
+            this.tblLayoutButtonPanel.Controls.Add(this.btnSave, 1, 0);
+            this.tblLayoutButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tblLayoutButtonPanel.Location = new System.Drawing.Point(0, 507);
+            this.tblLayoutButtonPanel.Name = "tblLayoutButtonPanel";
+            this.tblLayoutButtonPanel.RowCount = 1;
+            this.tblLayoutButtonPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLayoutButtonPanel.Size = new System.Drawing.Size(877, 100);
+            this.tblLayoutButtonPanel.TabIndex = 22;
+            this.tblLayoutButtonPanel.Visible = false;
             // 
             // UserAccessForm
             // 
@@ -191,34 +193,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(877, 607);
-            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tblLayoutButtonPanel);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserAccessForm";
             this.Text = "UserAccessForm";
             this.Load += new System.EventHandler(this.UserAccessForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userAccessGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tblLayoutGridPanel.ResumeLayout(false);
+            this.tblLayoutButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView userAccessGrid;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblUserAccessForm;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label lblLoading;
+        private System.Windows.Forms.TableLayoutPanel tblLayoutGridPanel;
+        private System.Windows.Forms.TableLayoutPanel tblLayoutButtonPanel;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblUserProfileId;
     }

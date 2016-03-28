@@ -2,3 +2,4 @@ F:\Practice\Windows\UserModule\UserModule.interfaces\bin\Debug\UserModule.Interf
 F:\Practice\Windows\UserModule\UserModule.interfaces\bin\Debug\UserModule.Interfaces.pdb
 F:\Practice\Windows\UserModule\UserModule.interfaces\obj\Debug\UserModule.Interfaces.dll
 F:\Practice\Windows\UserModule\UserModule.interfaces\obj\Debug\UserModule.Interfaces.pdb
+F:\Practice\Windows\UserModule\UserModule.interfaces\obj\Debug\UserModule.Interfaces.csprojResolveAssemblyReference.cache

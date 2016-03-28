@@ -11,46 +11,19 @@ namespace UserModule.App
     {
         #region Properties and Variables
         private IUserAccessPresenter _userAccessPresenter;
-        private long userProfileId;
-
-        public string ConnectionString;
-
-        public long UserProfileId
-        {
-            get
-            {
-                return this.userProfileId;
-            }
-            set
-            {
-                this.userProfileId = UserProfileEntry.staticuserProfileId;
-            }
-        }
-
-        private string userName;
-        public string UserName
-        {
-            get
-            {
-                return this.userName;
-            }
-            set
-            {
-                this.userName = UserProfileEntry.staticuserProfileName;
-            }
-        }
 
         public UserAccessForm()
         {
             InitializeComponent();
             _userAccessPresenter = new UserAccessPresenter();
         }
-        #endregion        
-        
+        #endregion
+
         #region Events
         private void UserAccessForm_Load(object sender, EventArgs e)
         {
-            txtUserName.Text = UserName;
+            txtUserName.Text = UserProfileEntry.staticuserProfileName;
+            lblUserProfileId.Text = UserProfileEntry.staticuserProfileId.ToString();
 
             //Async Delegate 
             var tokenSource = new CancellationTokenSource();
@@ -68,9 +41,10 @@ namespace UserModule.App
 
             }, token).ContinueWith(ant =>
             {
-                tableLayoutPanel1.Visible = true;
-                dataGridView1.DataSource = dtSystemTbl;
-                dataGridView1.Columns[0].Visible = false;
+                tblLayoutGridPanel.Visible = true;
+                userAccessGrid.DataSource = dtSystemTbl;
+                userAccessGrid.Columns[0].Visible = false;
+                tblLayoutButtonPanel.Visible = true;
 
                 AddBranches(dtBranchTbl);
                 AddUserLevels(dtUserLevelTbl);
@@ -86,8 +60,16 @@ namespace UserModule.App
         {
             bool saveChanges = false;
 
-            var collection = dataGridView1.Rows;
-            saveChanges = _userAccessPresenter.SaveChanges(collection, UserProfileId);    
+            try
+            {
+                var collection = userAccessGrid.Rows;
+                saveChanges = _userAccessPresenter.SaveChanges(collection, UserProfileEntry.staticuserProfileId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
 
         }
 
@@ -116,7 +98,7 @@ namespace UserModule.App
                 checkBox.ValueType = typeof(bool);
                 checkBox.HeaderText = dr["BranchCode"].ToString();
                 checkBox.ToolTipText = dr["BranchCode"].ToString();
-                dataGridView1.Columns.Add(checkBox);
+                userAccessGrid.Columns.Add(checkBox);
             }
         }
 
@@ -130,7 +112,7 @@ namespace UserModule.App
             comboBox.ValueMember = "UserLevelCategoryId";
             comboBox.DisplayMember = "UserLevelCategoryName";
 
-            dataGridView1.Columns.Add(comboBox);
+            userAccessGrid.Columns.Add(comboBox);
         }
         #endregion
 
