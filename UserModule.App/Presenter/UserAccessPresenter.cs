@@ -67,7 +67,8 @@ namespace UserModule.App
                 }
 
                 saveChanges = userAccessService.SaveChanges(systemId, branchCodes, comboBoxSelectedValue, userProfileId);
-                
+                branchCodes = new List<string>();
+                comboBoxSelectedValue = 0;
             }     
                 
             return saveChanges;

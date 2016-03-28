@@ -23,7 +23,7 @@ namespace UserModule.App
         private void UserAccessForm_Load(object sender, EventArgs e)
         {
             txtUserName.Text = UserProfileEntry.staticuserProfileName;
-            lblUserProfileId.Text = UserProfileEntry.staticuserProfileId.ToString();
+            
 
             //Async Delegate 
             var tokenSource = new CancellationTokenSource();

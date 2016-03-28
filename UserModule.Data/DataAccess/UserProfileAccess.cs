@@ -98,12 +98,20 @@ namespace UserModule.Data
         {
             bool saveBranchCodes = false;
             bool saveUserAccess = false;
-            foreach(var code in branchCodes)
-            {
-                saveBranchCodes = SaveBranchCodes(code, systemId, userProfileId); 
-            }
 
-            saveUserAccess = SaveUserAccessDetails(systemId, comboBoxSelectedValue, userProfileId);
+            if(branchCodes.Count > 0)
+            {
+                foreach (var code in branchCodes)
+                {
+                    saveBranchCodes = SaveBranchCodes(code, systemId, userProfileId);
+                }
+            }
+            
+            if(comboBoxSelectedValue != 0)
+            {
+                saveUserAccess = SaveUserAccessDetails(systemId, comboBoxSelectedValue, userProfileId);
+            }
+           
 
             if(saveBranchCodes && saveUserAccess)
             {
@@ -122,7 +130,7 @@ namespace UserModule.Data
             {
                 sqlCommand.Connection = new SqlConnection(ConnectionString);
                 sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.CommandText = Script.sqlInsertLocalAccess;
+                sqlCommand.CommandText = Script.sqlInsertUserAccess;
                 sqlCommand.Parameters.AddWithValue("@userAccessStatus", UserProfileStatus.Active);
                 sqlCommand.Parameters.AddWithValue("@userProfileId", userId);
                 sqlCommand.Parameters.AddWithValue("@localSystemId", systemId);
