@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Data;
 using UserModule.Data;
-using UserModule.interfaces;
+using UserModule.Interfaces;
 
 namespace UserModule.App
 {
     public class LoginModulePresenter : ILoginModulePresenter
     {
         private IUserProfileService userProfileService = UserProfileService.Instance;
+
+        #region Methods
         public long Login(string username, string password)
         {
             DataRow dRow = userProfileService.GetUserProfileByName(username);
@@ -34,5 +36,6 @@ namespace UserModule.App
                 throw new Exception("User does not exist");
             }
         }
+        #endregion
     }
 }

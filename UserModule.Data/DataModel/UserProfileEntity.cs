@@ -1,5 +1,5 @@
 ﻿using System;
-using UserModule.interfaces;
+using UserModule.Interfaces;
 
 namespace UserModule.Data
 {

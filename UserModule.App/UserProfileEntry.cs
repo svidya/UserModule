@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using UserModule.App;
-using UserModule.interfaces;
+using UserModule.Interfaces;
 
 namespace UserModule.App
 {

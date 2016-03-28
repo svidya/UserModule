@@ -103,9 +103,9 @@
       <Project>{e2660568-e810-44e2-9206-2f299d38c0fb}</Project>
       <Name>UserModule.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UserModule.interfaces\UserModule.interfaces.csproj">
+    <ProjectReference Include="..\UserModule.interfaces\UserModule.Interfaces.csproj">
       <Project>{5d0848cb-c879-465d-bc9c-695973d5cbd2}</Project>
-      <Name>UserModule.interfaces</Name>
+      <Name>UserModule.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

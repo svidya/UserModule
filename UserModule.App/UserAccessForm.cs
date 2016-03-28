@@ -4,7 +4,7 @@ using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UserModule.interfaces;
+using UserModule.Interfaces;
 
 namespace UserModule.App
 {
@@ -40,14 +40,14 @@ namespace UserModule.App
                 this.userName = UserProfileEntry.staticuserProfileName;
             }
         }
-        #endregion
 
         public UserAccessForm()
         {
             InitializeComponent();
             _userAccessPresenter = new UserAccessPresenter();
         }
-
+        #endregion        
+        
         #region Events
         private void UserAccessForm_Load(object sender, EventArgs e)
         {
@@ -87,8 +87,7 @@ namespace UserModule.App
             bool saveChanges = false;
 
             var collection = dataGridView1.Rows;
-            saveChanges = _userAccessPresenter.SaveChanges(collection, UserProfileId);
-
+            saveChanges = _userAccessPresenter.SaveChanges(collection, UserProfileId);    
 
         }
 

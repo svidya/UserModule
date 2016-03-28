@@ -7,8 +7,8 @@
     <ProjectGuid>{5D0848CB-C879-465D-BC9C-695973D5CBD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UserModule.interfaces</RootNamespace>
-    <AssemblyName>UserModule.interfaces</AssemblyName>
+    <RootNamespace>UserModule.Interfaces</RootNamespace>
+    <AssemblyName>UserModule.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

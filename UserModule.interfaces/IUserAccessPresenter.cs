@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Windows.Forms;
 
-namespace UserModule.interfaces
+namespace UserModule.Interfaces
 {
     public interface IUserAccessPresenter
     {

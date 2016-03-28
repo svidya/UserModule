@@ -1,12 +1,11 @@
 ﻿using System;
 using UserModule.Data;
-using UserModule.interfaces;
+using UserModule.Interfaces;
 
 namespace UserModule.App
 {
     public class UserModulePresenter : IUserModulePresenter
-    {
-        
+    { 
         private IUserProfileService userProfileService = UserProfileService.Instance;
 
         #region Methods

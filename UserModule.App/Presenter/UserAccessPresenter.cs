@@ -4,13 +4,15 @@ using System.Data;
 using System.Threading;
 using System.Windows.Forms;
 using UserModule.Data;
-using UserModule.interfaces;
+using UserModule.Interfaces;
 
 namespace UserModule.App
 {
     public class UserAccessPresenter : IUserAccessPresenter
     {
         private IUserAccessService userAccessService = UserAccessService.Instance;
+
+        #region Methods
         public DataTable GetBranchCodes()
         {  
             return userAccessService.GetBranchCodes();
@@ -66,11 +68,11 @@ namespace UserModule.App
 
                 saveChanges = userAccessService.SaveChanges(systemId, branchCodes, comboBoxSelectedValue, userProfileId);
                 
-            }
-
-          
+            }     
                 
-            return false;
+            return saveChanges;
         }
+
+        #endregion
     }
 }

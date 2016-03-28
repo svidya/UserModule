@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccessForm));
             this.btnClose = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
@@ -192,6 +193,7 @@
             this.ClientSize = new System.Drawing.Size(877, 607);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserAccessForm";
             this.Text = "UserAccessForm";
             this.Load += new System.EventHandler(this.UserAccessForm_Load);

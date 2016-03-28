@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Windows.Forms;
-using UserModule.interfaces;
+using UserModule.Interfaces;
 
 namespace UserModule.App
 {
     public partial class Login : Form
     {
+        #region Properties and Variables
         private ILoginModulePresenter _loginPresenter;
       
         public static long staticOperatorId;
-       
-
         public Login()
         {
             InitializeComponent();
             _loginPresenter = new LoginModulePresenter();
 
         }
+
+        #endregion    
+
+        #region Events
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -37,12 +40,10 @@ namespace UserModule.App
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-
-                                
+            }                
 
         }
+        #endregion
 
-        
     }
 }

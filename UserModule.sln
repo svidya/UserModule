@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserModule.App", "UserModul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserModule.Data", "UserModule.Data\UserModule.Data.csproj", "{E2660568-E810-44E2-9206-2F299D38C0FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserModule.interfaces", "UserModule.interfaces\UserModule.interfaces.csproj", "{5D0848CB-C879-465D-BC9C-695973D5CBD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserModule.Interfaces", "UserModule.interfaces\UserModule.Interfaces.csproj", "{5D0848CB-C879-465D-BC9C-695973D5CBD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

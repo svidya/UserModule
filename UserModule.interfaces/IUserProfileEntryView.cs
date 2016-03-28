@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace UserModule.interfaces
+namespace UserModule.Interfaces
 {
     public interface IUserProfileEntryView
     {
