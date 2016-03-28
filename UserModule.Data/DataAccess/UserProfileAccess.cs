@@ -28,6 +28,7 @@ namespace UserModule.Data
 
                 // Add the parameter to the parameter collection
                 dataAdapter.SelectCommand.Parameters.AddWithValue("@userprofileId", id);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@status", UserProfileStatus.Active);
 
                 // Fill the datatable From adapter
                 dataAdapter.Fill(dataTable);
@@ -69,7 +70,7 @@ namespace UserModule.Data
                 sqlCommand.CommandText = Script.sqlUpdateUserProfile;
 
                 // Add the input parameters to the parameter collection
-                sqlCommand.Parameters.AddWithValue("@status",userProfile.UserProfileStatus);
+                sqlCommand.Parameters.AddWithValue("@status",UserProfileStatus.Active);
                 sqlCommand.Parameters.AddWithValue("@profileAccount", userProfile.UserProfileAccount);
                 sqlCommand.Parameters.AddWithValue("@fullName", userProfile.UserProfileName);
                 sqlCommand.Parameters.AddWithValue("@domainName", userProfile.UserProfileDomainName);
@@ -92,7 +93,25 @@ namespace UserModule.Data
 
         public bool DeleteUserProfile(long userProfileId)
         {
-            throw new NotImplementedException();
+            using (SqlCommand sqlCommand = new SqlCommand())
+            {
+                // Set the command object properties
+                sqlCommand.Connection = new SqlConnection(ConnectionString);
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = Script.sqlDeleteUserProfile;
+
+                // Add the input parameters to the parameter collection       
+                sqlCommand.Parameters.AddWithValue("@status", UserProfileStatus.Deleted);
+                sqlCommand.Parameters.AddWithValue("@userProfileId", userProfileId);
+
+
+                // Open the connection, execute the query and close the connection
+                sqlCommand.Connection.Open();
+                var rowsAffected = sqlCommand.ExecuteNonQuery();
+                sqlCommand.Connection.Close();
+
+                return rowsAffected > 0;
+            }
         }
 
         public DataRow GetUserProfileByName(string userName)
@@ -110,6 +129,7 @@ namespace UserModule.Data
 
                 // Add the parameter to the parameter collection
                 dataAdapter.SelectCommand.Parameters.AddWithValue("@profileAccount", userName);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@status", UserProfileStatus.Active);
 
                 // Fill the datatable From adapter
                 dataAdapter.Fill(dataTable);

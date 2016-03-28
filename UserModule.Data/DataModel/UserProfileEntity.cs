@@ -18,4 +18,10 @@ namespace UserModule.Data
         public DateTime UserProfileTimeStamp { get; set; }
 
     }
+
+    public enum UserProfileStatus
+    {
+       Active = 0,
+       Deleted = -1
+    }
 }

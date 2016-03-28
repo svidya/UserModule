@@ -14,8 +14,8 @@
 
         public static readonly string sqlUpdatePassword = "Update UserProfile SET UserProfilePassword = @password where UserProfileId = @userProfileId";
 
-        public static readonly string sqlGetUserProfileByName = "Select * From UserProfile where UserProfileAccount = @profileAccount";
-        public static readonly string sqlGetUserProfileById = "Select * From UserProfile where UserProfileId = @userprofileId";
+        public static readonly string sqlGetUserProfileByName = "Select * From UserProfile where UserProfileAccount = @profileAccount and UserProfileStatus = @status";
+        public static readonly string sqlGetUserProfileById = "Select * From UserProfile where UserProfileId = @userprofileId and UserProfileStatus = @status";
 
         public static string sqlGetLocalSystem = "Select * from LocalSystem";
 

@@ -12,11 +12,7 @@ namespace UserModule.interfaces
         string UserProfileName { get; set; }
         string UserProfileAccount { get; set; }  
         bool isAdmin { get; set; }                
-        string UserProfileMailAddress { get; set; }
-
-
-
-
+        string UserProfileMailAddress { get; set; }   
 
     }
 }

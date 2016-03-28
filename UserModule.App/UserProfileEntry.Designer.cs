@@ -31,28 +31,28 @@
             this.lblUserProfileEntryHeading = new System.Windows.Forms.Label();
             this.pnlHeading = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lblOperatorName = new System.Windows.Forms.Label();
+            this.lblUserProfileId = new System.Windows.Forms.Label();
             this.lblDomainName = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.lblUserAdmin = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
-            this.lblUserProfileId = new System.Windows.Forms.Label();
-            this.btnGrantAccess = new System.Windows.Forms.Button();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblUserAdmin = new System.Windows.Forms.Label();
+            this.lblOperatorName = new System.Windows.Forms.Label();
             this.txtUserId = new System.Windows.Forms.TextBox();
-            this.txtOperatorName = new System.Windows.Forms.TextBox();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.chkAdmin = new System.Windows.Forms.CheckBox();
             this.txtDomain = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.chkAdmin = new System.Windows.Forms.CheckBox();
+            this.txtOperatorName = new System.Windows.Forms.TextBox();
+            this.btnGrantAccess = new System.Windows.Forms.Button();
+            this.lblOperatorId = new System.Windows.Forms.Label();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dtnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.lblOperatorId = new System.Windows.Forms.Label();
             this.pnlHeading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -111,15 +111,15 @@
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.TabStop = false;
             // 
-            // lblOperatorName
+            // lblUserProfileId
             // 
-            this.lblOperatorName.AutoSize = true;
-            this.lblOperatorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperatorName.Location = new System.Drawing.Point(39, 294);
-            this.lblOperatorName.Name = "lblOperatorName";
-            this.lblOperatorName.Size = new System.Drawing.Size(214, 29);
-            this.lblOperatorName.TabIndex = 0;
-            this.lblOperatorName.Text = "Profile Created By:";
+            this.lblUserProfileId.AutoSize = true;
+            this.lblUserProfileId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserProfileId.Location = new System.Drawing.Point(39, 26);
+            this.lblUserProfileId.Name = "lblUserProfileId";
+            this.lblUserProfileId.Size = new System.Drawing.Size(166, 29);
+            this.lblUserProfileId.TabIndex = 0;
+            this.lblUserProfileId.Text = "User Profile Id";
             // 
             // lblDomainName
             // 
@@ -141,15 +141,15 @@
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "User Name";
             // 
-            // lblUserAdmin
+            // lblFullName
             // 
-            this.lblUserAdmin.AutoSize = true;
-            this.lblUserAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserAdmin.Location = new System.Drawing.Point(39, 243);
-            this.lblUserAdmin.Name = "lblUserAdmin";
-            this.lblUserAdmin.Size = new System.Drawing.Size(138, 29);
-            this.lblUserAdmin.TabIndex = 0;
-            this.lblUserAdmin.Text = "User Admin";
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullName.Location = new System.Drawing.Point(38, 148);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(124, 29);
+            this.lblFullName.TabIndex = 0;
+            this.lblFullName.Text = "Full Name";
             // 
             // lblEmail
             // 
@@ -161,25 +161,78 @@
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email Address";
             // 
-            // lblFullName
+            // lblUserAdmin
             // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(38, 148);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(124, 29);
-            this.lblFullName.TabIndex = 0;
-            this.lblFullName.Text = "Full Name";
+            this.lblUserAdmin.AutoSize = true;
+            this.lblUserAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserAdmin.Location = new System.Drawing.Point(39, 243);
+            this.lblUserAdmin.Name = "lblUserAdmin";
+            this.lblUserAdmin.Size = new System.Drawing.Size(138, 29);
+            this.lblUserAdmin.TabIndex = 0;
+            this.lblUserAdmin.Text = "User Admin";
             // 
-            // lblUserProfileId
+            // lblOperatorName
             // 
-            this.lblUserProfileId.AutoSize = true;
-            this.lblUserProfileId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserProfileId.Location = new System.Drawing.Point(39, 26);
-            this.lblUserProfileId.Name = "lblUserProfileId";
-            this.lblUserProfileId.Size = new System.Drawing.Size(166, 29);
-            this.lblUserProfileId.TabIndex = 0;
-            this.lblUserProfileId.Text = "User Profile Id";
+            this.lblOperatorName.AutoSize = true;
+            this.lblOperatorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperatorName.Location = new System.Drawing.Point(39, 294);
+            this.lblOperatorName.Name = "lblOperatorName";
+            this.lblOperatorName.Size = new System.Drawing.Size(214, 29);
+            this.lblOperatorName.TabIndex = 0;
+            this.lblOperatorName.Text = "Profile Created By:";
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.Enabled = false;
+            this.txtUserId.Location = new System.Drawing.Point(79, 26);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(165, 22);
+            this.txtUserId.TabIndex = 1;
+            // 
+            // txtDomain
+            // 
+            this.txtDomain.Location = new System.Drawing.Point(79, 67);
+            this.txtDomain.Name = "txtDomain";
+            this.txtDomain.Size = new System.Drawing.Size(165, 22);
+            this.txtDomain.TabIndex = 2;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(79, 107);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(260, 22);
+            this.txtUserName.TabIndex = 3;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(79, 155);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(260, 22);
+            this.txtFullName.TabIndex = 4;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(79, 200);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(449, 22);
+            this.txtEmail.TabIndex = 5;
+            // 
+            // chkAdmin
+            // 
+            this.chkAdmin.AutoSize = true;
+            this.chkAdmin.Location = new System.Drawing.Point(79, 254);
+            this.chkAdmin.Name = "chkAdmin";
+            this.chkAdmin.Size = new System.Drawing.Size(18, 17);
+            this.chkAdmin.TabIndex = 6;
+            this.chkAdmin.UseVisualStyleBackColor = true;
+            // 
+            // txtOperatorName
+            // 
+            this.txtOperatorName.Enabled = false;
+            this.txtOperatorName.Location = new System.Drawing.Point(79, 294);
+            this.txtOperatorName.Name = "txtOperatorName";
+            this.txtOperatorName.Size = new System.Drawing.Size(260, 22);
+            this.txtOperatorName.TabIndex = 7;
             // 
             // btnGrantAccess
             // 
@@ -192,58 +245,14 @@
             this.btnGrantAccess.UseVisualStyleBackColor = true;
             this.btnGrantAccess.Click += new System.EventHandler(this.btnGrantAccess_Click);
             // 
-            // txtUserId
+            // lblOperatorId
             // 
-            this.txtUserId.Enabled = false;
-            this.txtUserId.Location = new System.Drawing.Point(79, 26);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(165, 22);
-            this.txtUserId.TabIndex = 1;
-            // 
-            // txtOperatorName
-            // 
-            this.txtOperatorName.Enabled = false;
-            this.txtOperatorName.Location = new System.Drawing.Point(79, 294);
-            this.txtOperatorName.Name = "txtOperatorName";
-            this.txtOperatorName.Size = new System.Drawing.Size(260, 22);
-            this.txtOperatorName.TabIndex = 7;
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.Location = new System.Drawing.Point(79, 155);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(260, 22);
-            this.txtFullName.TabIndex = 4;
-            // 
-            // chkAdmin
-            // 
-            this.chkAdmin.AutoSize = true;
-            this.chkAdmin.Location = new System.Drawing.Point(79, 254);
-            this.chkAdmin.Name = "chkAdmin";
-            this.chkAdmin.Size = new System.Drawing.Size(18, 17);
-            this.chkAdmin.TabIndex = 6;
-            this.chkAdmin.UseVisualStyleBackColor = true;
-            // 
-            // txtDomain
-            // 
-            this.txtDomain.Location = new System.Drawing.Point(79, 67);
-            this.txtDomain.Name = "txtDomain";
-            this.txtDomain.Size = new System.Drawing.Size(165, 22);
-            this.txtDomain.TabIndex = 2;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(79, 200);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(449, 22);
-            this.txtEmail.TabIndex = 5;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(79, 107);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(260, 22);
-            this.txtUserName.TabIndex = 3;
+            this.lblOperatorId.AutoSize = true;
+            this.lblOperatorId.Location = new System.Drawing.Point(394, 304);
+            this.lblOperatorId.Name = "lblOperatorId";
+            this.lblOperatorId.Size = new System.Drawing.Size(0, 17);
+            this.lblOperatorId.TabIndex = 14;
+            this.lblOperatorId.Visible = false;
             // 
             // pnlButtons
             // 
@@ -267,6 +276,7 @@
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCancel
             // 
@@ -277,6 +287,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dtnDelete
             // 
@@ -287,6 +298,7 @@
             this.dtnDelete.TabIndex = 11;
             this.dtnDelete.Text = "Delete";
             this.dtnDelete.UseVisualStyleBackColor = true;
+            this.dtnDelete.Click += new System.EventHandler(this.dtnDelete_Click);
             // 
             // btnSave
             // 
@@ -308,15 +320,7 @@
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // lblOperatorId
-            // 
-            this.lblOperatorId.AutoSize = true;
-            this.lblOperatorId.Location = new System.Drawing.Point(394, 304);
-            this.lblOperatorId.Name = "lblOperatorId";
-            this.lblOperatorId.Size = new System.Drawing.Size(0, 17);
-            this.lblOperatorId.TabIndex = 14;
-            this.lblOperatorId.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // UserProfileEntry
             // 

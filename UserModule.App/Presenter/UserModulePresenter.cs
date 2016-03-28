@@ -64,5 +64,12 @@ namespace UserModule.App.Presenter
             userEntity = userProfileService.GetUserProfileById(operatorId);   
             return userEntity.UserProfileName;
         }
+
+        public bool DeleteUserData(string userProfileId)
+        {
+            bool isDeleted = userProfileService.DeleteUserProfile(Convert.ToInt64(userProfileId));
+
+            return isDeleted;
+        }
     }
 }
