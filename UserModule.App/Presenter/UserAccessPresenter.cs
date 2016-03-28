@@ -1,5 +1,8 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Threading;
+using System.Windows.Forms;
 using UserModule.Data;
 using UserModule.interfaces;
 
@@ -22,6 +25,52 @@ namespace UserModule.App
         public DataTable GetUserLevels()
         {
             return userAccessService.GetUserLevels();
+        }
+           
+        public bool SaveChanges(DataGridViewRowCollection collection,long userProfileId)
+        {
+            long systemId = 0;
+            List<string> branchCodes = new List<string>();
+            long comboBoxSelectedValue = 0;
+            int columnindex =0;
+            bool saveChanges = false;
+
+            foreach(DataGridViewRow row in collection)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    var cellType = cell.GetType();
+
+                    if (cellType.Name.Equals("DataGridViewTextBoxCell") && cell.ColumnIndex != 1)
+                    {
+                        systemId = Convert.ToInt64(cell.Value);
+                    }
+                    else if (cellType.Name.Equals("DataGridViewCheckBoxCell"))
+                    {
+                        if (Convert.ToBoolean(cell.FormattedValue))
+                        {
+                            columnindex = cell.ColumnIndex;
+
+                            var code = row.DataGridView.Columns[columnindex].HeaderText;     
+                            branchCodes.Add(code);
+                        }
+                    }
+                    else if (cellType.Name.Equals("DataGridViewComboBoxCell"))
+                    {
+                        if(cell.Selected)
+                        {
+                            comboBoxSelectedValue = Convert.ToInt64(cell.Value);
+                        }  
+                    } 
+                }
+
+                saveChanges = userAccessService.SaveChanges(systemId, branchCodes, comboBoxSelectedValue, userProfileId);
+                
+            }
+
+          
+                
+            return false;
         }
     }
 }

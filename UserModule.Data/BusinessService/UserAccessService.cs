@@ -57,6 +57,11 @@ namespace UserModule.Data
         {
             return userProfileAccess.GetUserLevels();
         }
+
+        public bool SaveChanges(long systemId, List<string> branchCodes, long comboBoxSelectedValue,long userProfileId)
+        {
+            return userProfileAccess.SaveChanges(systemId, branchCodes, comboBoxSelectedValue, userProfileId);
+        }
         #endregion
     }
 }

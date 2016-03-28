@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Data;
+using System.Windows.Forms;
 
 namespace UserModule.interfaces
 {
@@ -13,5 +10,7 @@ namespace UserModule.interfaces
         DataTable GetBranchCodes();
 
         DataTable GetUserLevels();
+   
+        bool SaveChanges(DataGridViewRowCollection collection,long userProfileId);
     }
 }

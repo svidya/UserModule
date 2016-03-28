@@ -23,6 +23,9 @@
 
         public static string sqlGetBranchCodes = "Select BranchCode From Branch";
 
+        public static string sqlInsertUserAccess = "Insert into UserAccess(UserAccessStatus,UserAccessUserProfileId,UserAccessLocalSystemId,UserAccessUserLevelCategoryId) Values(@userAccessStatus,@userProfileId,@localSystemId,@userLevelId); Select scope_identity()";
+
+        public static string sqlInsertLocalAccess = "Insert into LocalSystemBranch(LocalSystemBranchStatus,LocalSystemBranchUserProfileId,LocalSystemBranchLocalSystemId,localSystemBranchCode) Values(@userAccessStatus,@userProfileId,@localSystemId,@branchCode); Select scope_identity()";
 
     }
 }

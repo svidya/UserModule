@@ -11,5 +11,6 @@ namespace UserModule.Data
         DataTable GetLocalSystem();
         DataTable GetUserLevels();
         DataTable GetBranchCodes();
+        bool SaveChanges(long systemId, List<string> branchCodes, long comboBoxSelectedValue,long userProfileId);
     }
 }

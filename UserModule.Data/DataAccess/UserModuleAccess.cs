@@ -136,7 +136,7 @@ namespace UserModule.Data
                 dataAdapter.Fill(dataTable);
 
                 // Get the datarow from the table
-                dataRow = dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;
+                dataRow = dataTable.Rows.Count > 0 ? dataTable.Rows[0] : null;                 
 
                 return dataRow;
             }

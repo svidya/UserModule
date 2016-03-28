@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 
 namespace UserModule.Data
 {
@@ -9,6 +10,6 @@ namespace UserModule.Data
         DataTable GetBranchCodes();
 
         DataTable GetUserLevels();
-
+        bool SaveChanges(long systemId, List<string> branchCodes, long comboBoxSelectedValue, long userProfileId);
     }
 }

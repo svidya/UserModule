@@ -12,17 +12,26 @@ namespace UserModule.App
         {
             DataRow dRow = userProfileService.GetUserProfileByName(username);
 
-            var dbPassword = dRow["UserProfilePassword"].ToString();
-            var dbOperatorId = Convert.ToInt64(dRow["UserProfileId"]);
-            var isAdmin = dRow["UserProfileUserLevelToUserAdmin"].ToString();
+            try
+            {
 
-            if (password.Equals(dbPassword) && isAdmin.Equals("Y"))
-            {
-                return dbOperatorId;
+                var dbPassword = dRow["UserProfilePassword"].ToString();
+                var dbOperatorId = Convert.ToInt64(dRow["UserProfileId"]);
+                var isAdmin = dRow["UserProfileUserLevelToUserAdmin"].ToString();
+
+
+                if (password.Equals(dbPassword) && isAdmin.Equals("Y"))
+                {
+                    return dbOperatorId;
+                }
+                else
+                {
+                    throw new Exception("Not admin");
+                }
             }
-            else
+            catch
             {
-                throw new Exception("Not admin");
+                throw new Exception("User does not exist");
             }
         }
     }

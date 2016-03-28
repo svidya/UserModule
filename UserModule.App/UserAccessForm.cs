@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Threading;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace UserModule.App
         }
         #endregion
 
-       public UserAccessForm()
+        public UserAccessForm()
         {
             InitializeComponent();
             _userAccessPresenter = new UserAccessPresenter();
@@ -66,23 +67,28 @@ namespace UserModule.App
                 dtUserLevelTbl = _userAccessPresenter.GetUserLevels();
 
             }, token).ContinueWith(ant =>
-            {     
-                tableLayoutPanel1.Visible = true;     
+            {
+                tableLayoutPanel1.Visible = true;
                 dataGridView1.DataSource = dtSystemTbl;
                 dataGridView1.Columns[0].Visible = false;
 
                 AddBranches(dtBranchTbl);
                 AddUserLevels(dtUserLevelTbl);
-                 
+
 
             }, CancellationToken.None,
            TaskContinuationOptions.None,
-           scheduler);  
+           scheduler);
 
-        }         
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            bool saveChanges = false;
+
+            var collection = dataGridView1.Rows;
+            saveChanges = _userAccessPresenter.SaveChanges(collection, UserProfileId);
+
 
         }
 
@@ -110,6 +116,7 @@ namespace UserModule.App
                 var checkBox = new DataGridViewCheckBoxColumn();
                 checkBox.ValueType = typeof(bool);
                 checkBox.HeaderText = dr["BranchCode"].ToString();
+                checkBox.ToolTipText = dr["BranchCode"].ToString();
                 dataGridView1.Columns.Add(checkBox);
             }
         }
@@ -126,7 +133,7 @@ namespace UserModule.App
 
             dataGridView1.Columns.Add(comboBox);
         }
-        #endregion            
+        #endregion
 
     }
 }
